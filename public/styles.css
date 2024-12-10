@@ -496,3 +496,30 @@ footer {
     transform: translateY(-10px);
     box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.4);
 }
+.feature a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green button color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.feature a .arrow {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.feature a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateX(5px); /* Small movement to the right when hovered */
+}
+
+.feature a:focus {
+    outline: none; /* Remove default focus outline */
+}

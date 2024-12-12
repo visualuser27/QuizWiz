@@ -232,4 +232,34 @@ footer a:hover {
         margin-bottom: 20px;
     }
 }
+.quiz-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.question ul {
+    list-style: none;
+    padding: 0;
+}
+
+.question li {
+    margin: 5px 0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
 

@@ -240,3 +240,37 @@ app.post('/saveFlashcardSet', checkAuthenticated, async (req, res) => {
     }
   });
   
+  const express = require('express');
+  const path = require('path');
+  const downloadAudio = require('./utils/downloadVideo');
+  const transcribeAudio = require('./utils/transcribeAudio');
+  const generateQuestions = require('./utils/generateQuiz');
+  
+  require('dotenv').config();
+  
+
+  
+  app.use(express.json());
+  app.use(express.static(path.join(__dirname, 'public')));
+  
+  app.post('/api/generate-quiz', async (req, res) => {
+      const { youtubeUrl } = req.body;
+  
+      if (!youtubeUrl) {
+          return res.status(400).json({ error: 'YouTube URL is required.' });
+      }
+  
+      try {
+          const audioPath = await downloadAudio(youtubeUrl, path.join(__dirname, 'public/uploads'));
+          const transcript = await transcribeAudio(audioPath);
+          const questions = await generateQuestions(transcript);
+          res.json({ questions });
+      } catch (error) {
+          console.error('Error:', error);
+          res.status(500).json({ error: 'An error occurred while generating the quiz.' });
+      }
+  });
+  
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+  

@@ -24,8 +24,7 @@ def generate_quiz():
 
 def generate_quiz_from_text(text):
     # Simple example: split text into questions and generate MCQs
-    questions = []
-    
+    questions = []    
     # A very basic method to extract questions (this could be much more complex)
     paragraphs = text.split('\n')
     for para in paragraphs:

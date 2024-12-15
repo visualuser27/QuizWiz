@@ -10,20 +10,24 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-flash": "^0.0.2",
     "express-session": "^1.18.1",
     "method-override": "^3.0.0",
     "mysql": "^2.18.1",
-    "mysql2": "^3.11.3",
+    "mysql2": "^3.11.5",
     "passport": "^0.7.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "whisper-node": "^1.1.1",
+    "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5",
-    "nodemon": "^3.1.7"
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
   },
   "keywords": []
 }
